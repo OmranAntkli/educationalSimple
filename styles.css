@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* الصفحات */
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* الصفحة الرئيسية */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sparkle {
+    font-size: 2rem;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.stars-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #b45309;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.star-icon {
+    font-size: 1.5rem;
+}
+
+/* شبكة الوحدات */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.module-card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 3px solid transparent;
+}
+
+.module-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.quran-module {
+    background: linear-gradient(135deg, #d4f1d4, #a8e6a8);
+    border-color: #4ade80;
+}
+
+.writing-module {
+    background: linear-gradient(135deg, #dbeafe, #93c5fd);
+    border-color: #3b82f6;
+}
+
+.reading-module {
+    background: linear-gradient(135deg, #f3e8ff, #c084fc);
+    border-color: #a855f7;
+}
+
+.coding-module {
+    background: linear-gradient(135deg, #fed7aa, #fb923c);
+    border-color: #ea580c;
+}
+
+.module-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.module-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.module-card p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.start-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* التذييل */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.heart {
+    color: #ff6b9d;
+    font-size: 1.3rem;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* رأس الصفحات الفرعية */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+}
+
+.stars-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #b45309;
+}
+
+/* محتوى الوحدات */
+.module-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.module-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.module-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.module-title p {
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+/* صفحة القرآن */
+.verses-container {
+    display: grid;
+    gap: 30px;
+}
+
+.verse-card {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #bbf7d0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.verse-card.completed {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-color: #16a34a;
+}
+
+.verse-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #16a34a, #22c55e);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.arabic-text {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.transliteration {
+    font-size: 1.3rem;
+    color: #059669;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.translation {
+    font-size: 1.2rem;
+    color: #374151;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.lesson {
+    background: rgba(16, 163, 105, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #065f46;
+    margin-bottom: 20px;
+    border-right: 4px solid #10a369;
+}
+
+.audio-btn, .complete-btn {
+    margin: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.audio-btn {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.complete-btn {
+    background: linear-gradient(45deg, #16a34a, #15803d);
+    color: white;
+}
+
+.audio-btn:hover, .complete-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* صفحة الكتابة */
+.writing-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.letter-display {
+    text-align: center;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #93c5fd;
+}
+
+.big-letter {
+    font-family: 'Amiri', serif;
+    font-size: 8rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 20px;
+}
+
+.letter-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e40af;
+}
+
+.writing-area {
+    text-align: center;
+}
+
+#writing-canvas {
+    border: 3px solid #93c5fd;
+    border-radius: 15px;
+    background: white;
+    cursor: crosshair;
+    margin-bottom: 20px;
+}
+
+.canvas-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.canvas-controls button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.canvas-controls button:first-child {
+    background: linear-gradient(45deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.canvas-controls button:last-child {
+    background: linear-gradient(45deg, #16a34a, #15803d);
+    color: white;
+}
+
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.letter-btn {
+    padding: 20px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 15px;
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.letter-btn:hover, .letter-btn.active {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    color: white;
+    border-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* صفحة القراءة */
+.story-container {
+    margin-bottom: 30px;
+}
+
+.story-card {
+    display: none;
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #d8b4fe;
+}
+
+.story-card.active {
+    display: block;
+}
+
+.story-card h3 {
+    font-size: 2rem;
+    color: #7c3aed;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.story-text {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #374151;
+    margin-bottom: 30px;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.story-question {
+    background: rgba(124, 58, 237, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    border-right: 4px solid #7c3aed;
+}
+
+.story-question p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #581c87;
+    margin-bottom: 20px;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.answer-btn {
+    padding: 15px 25px;
+    background: white;
+    border: 2px solid #d8b4fe;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #7c3aed;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+    background: linear-gradient(45deg, #7c3aed, #6d28d9);
+    color: white;
+    transform: scale(1.05);
+}
+
+.answer-btn.correct {
+    background: linear-gradient(45deg, #16a34a, #15803d);
+    color: white;
+    border-color: #15803d;
+}
+
+.answer-btn.wrong {
+    background: linear-gradient(45deg, #ef4444, #dc2626);
+    color: white;
+    border-color: #dc2626;
+}
+
+.story-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.story-navigation button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #7c3aed, #6d28d9);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.story-navigation button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+}
+
+.story-navigation button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/*
+/* الاستجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .module-card {
+        padding: 25px;
+    }
+    
+    .writing-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .letters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .big-letter {
+        font-size: 5rem;
+    }
+    
+    #writing-canvas {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .story-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .lesson-tabs {
+        flex-direction: column;
+    }
+    
+    .answers {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية المتعلمين الصغار</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- الصفحة الرئيسية -->
+        <div id="home-page" class="page active">
+            <header class="header">
+                <div class="header-content">
+                    <div class="sparkle">✨</div>
+                    <h1 class="main-title">أكاديمية المتعلمين الصغار</h1>
+                    <div class="sparkle">✨</div>
+                </div>
+                <p class="subtitle">تعلم القرآن والكتابة والقراءة والبرمجة بطريقة ممتعة!</p>
+                <div class="stars-counter">
+                    <span class="star-icon">⭐</span>
+                    <span class="stars-text">النجوم المكتسبة: <span id="total-stars">0</span></span>
+                </div>
+            </header>
+
+            <div class="modules-grid">
+                <div class="module-card quran-module" onclick="showModule('quran')">
+                    <div class="module-icon">📖</div>
+                    <h3>تعلم القرآن</h3>
+                    <p>آيات جميلة وقصص مفيدة</p>
+                    <div class="start-btn">ابدأ التعلم ❤️</div>
+                </div>
+
+                <div class="module-card writing-module" onclick="showModule('writing')">
+                    <div class="module-icon">✏️</div>
+                    <h3>تمرين الكتابة</h3>
+                    <p>تعلم الحروف العربية والكلمات</p>
+                    <div class="start-btn">ابدأ التعلم ❤️</div>
+                </div>
+
+                <div class="module-card reading-module" onclick="showModule('reading')">
+                    <div class="module-icon">👁️</div>
+                    <h3>قصص القراءة</h3>
+                    <p>قصص ممتعة وفهم النصوص</p>
+                    <div class="start-btn">ابدأ التعلم ❤️</div>
+                </div>
+
+              
+            </div>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="heart">❤️</span>
+                    <span>صُنع بحب للمتعلمين الصغار</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </footer>
+        </div>
+
+        <!-- صفحة القرآن -->
+        <div id="quran-page" class="page">
+            <div class="page-header">
+                <button class="back-btn" onclick="showModule('home')">❤️ العودة للرئيسية</button>
+                <div class="stars-display">
+                    <span class="star-icon">⭐</span>
+                    <span id="quran-stars">0</span>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <div class="module-title">
+                    <h2>📖 تعلم آيات القرآن الجميلة</h2>
+                    <p>استمع وتعلم وافهم المعنى</p>
+                </div>
+
+                <div class="verses-container">
+                    <div class="verse-card active" data-verse="0">
+                        <div class="verse-number">1</div>
+                        <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                        <div class="transliteration">Bismillah-ir-Rahman-ir-Raheem</div>
+                        <div class="translation">بسم الله الرحمن الرحيم</div>
+                        <div class="lesson">هكذا نبدأ كل شيء نفعله - بذكر الله!</div>
+                        <button class="audio-btn" onclick="playAudio(0)">🔊 استمع</button>
+                        <button class="complete-btn" onclick="completeVerse(0)">✅ أتممت الحفظ</button>
+                    </div>
+
+                    <div class="verse-card" data-verse="1">
+                        <div class="verse-number">2</div>
+                        <div class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+                        <div class="transliteration">Alhamdulillahi Rabbil Alameen</div>
+                        <div class="translation">الحمد لله رب العالمين</div>
+                        <div class="lesson">نحمد الله على كل ما أعطانا!</div>
+                        <button class="audio-btn" onclick="playAudio(1)">🔊 استمع</button>
+                        <button class="complete-btn" onclick="completeVerse(1)">✅ أتممت الحفظ</button>
+                    </div>
+
+                    <div class="verse-card" data-verse="2">
+                        <div class="verse-number">3</div>
+                        <div class="arabic-text">وَقُلْ رَبِّ زِدْنِي عِلْمًا</div>
+                        <div class="transliteration">Wa qul Rabbi zidni ilma</div>
+                        <div class="translation">وقل رب زدني علماً</div>
+                        <div class="lesson">اطلب من الله دائماً أن يزيدك علماً!</div>
+                        <button class="audio-btn" onclick="playAudio(2)">🔊 استمع</button>
+                        <button class="complete-btn" onclick="completeVerse(2)">✅ أتممت الحفظ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة الكتابة -->
+        <div id="writing-page" class="page">
+            <div class="page-header">
+                <button class="back-btn" onclick="showModule('home')">❤️ العودة للرئيسية</button>
+                <div class="stars-display">
+                    <span class="star-icon">⭐</span>
+                    <span id="writing-stars">0</span>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <div class="module-title">
+                    <h2>✏️ تمرين كتابة الحروف العربية</h2>
+                    <p>تعلم كتابة الحروف والكلمات</p>
+                </div>
+
+                <div class="writing-container">
+                    <div class="letter-display">
+                        <div class="big-letter" id="current-letter">أ</div>
+                        <div class="letter-name" id="letter-name">ألف</div>
+                    </div>
+
+                    <div class="writing-area">
+                        <canvas id="writing-canvas" width="400" height="300"></canvas>
+                        <div class="canvas-controls">
+                            <button onclick="clearCanvas()">🗑️ امسح</button>
+                            <button onclick="checkWriting()">✅ تحقق من الكتابة</button>
+                        </div>
+                    </div>
+
+                    <div class="letters-grid">
+                        <div class="letter-btn active" onclick="selectLetter('أ', 'ألف', 0)">أ</div>
+                        <div class="letter-btn" onclick="selectLetter('ب', 'باء', 1)">ب</div>
+                        <div class="letter-btn" onclick="selectLetter('ت', 'تاء', 2)">ت</div>
+                        <div class="letter-btn" onclick="selectLetter('ث', 'ثاء', 3)">ث</div>
+                        <div class="letter-btn" onclick="selectLetter('ج', 'جيم', 4)">ج</div>
+                        <div class="letter-btn" onclick="selectLetter('ح', 'حاء', 5)">ح</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة القراءة -->
+        <div id="reading-page" class="page">
+            <div class="page-header">
+                <button class="back-btn" onclick="showModule('home')">❤️ العودة للرئيسية</button>
+                <div class="stars-display">
+                    <span class="star-icon">⭐</span>
+                    <span id="reading-stars">0</span>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <div class="module-title">
+                    <h2>👁️ قصص القراءة الممتعة</h2>
+                    <p>اقرأ القصص وأجب على الأسئلة</p>
+                </div>
+
+                <div class="story-container">
+                    <div class="story-card active" data-story="0">
+                        <h3>🐰 الأرنب الذكي</h3>
+                        <div class="story-text">
+                            كان هناك أرنب صغير ذكي يعيش في الغابة. كان يحب أن يتعلم أشياء جديدة كل يوم.
+                            في يوم من الأيام، وجد كتاباً تحت الشجرة. فتح الكتاب وبدأ يقرأ.
+                            تعلم الأرنب من الكتاب كيف يزرع الجزر ويعتني بالنباتات.
+                            أصبح الأرنب أذكى أرنب في الغابة بفضل حبه للقراءة والتعلم.
+                        </div>
+                        <div class="story-question">
+                            <p><strong>السؤال:</strong> ماذا وجد الأرنب تحت الشجرة؟</p>
+                            <div class="answers">
+                                <button class="answer-btn" onclick="checkAnswer(0, false)">جزرة</button>
+                                <button class="answer-btn" onclick="checkAnswer(0, true)">كتاب</button>
+                                <button class="answer-btn" onclick="checkAnswer(0, false)">لعبة</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-card" data-story="1">
+                        <h3>🌟 النجمة الصغيرة</h3>
+                        <div class="story-text">
+                            في السماء البعيدة، كانت هناك نجمة صغيرة تريد أن تضيء أكثر من النجوم الأخرى.
+                            سألت النجمة الكبيرة: "كيف أصبح أكثر إضاءة؟"
+                            قالت النجمة الكبيرة: "عليك أن تتعلمي وتمارسي كل يوم."
+                            بدأت النجمة الصغيرة تتعلم وتمارس، وأصبحت أجمل نجمة في السماء.
+                        </div>
+                        <div class="story-question">
+                            <p><strong>السؤال:</strong> ماذا أرادت النجمة الصغيرة؟</p>
+                            <div class="answers">
+                                <button class="answer-btn" onclick="checkAnswer(1, true)">أن تضيء أكثر</button>
+                                <button class="answer-btn" onclick="checkAnswer(1, false)">أن تنام</button>
+                                <button class="answer-btn" onclick="checkAnswer(1, false)">أن تلعب</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-navigation">
+                    <button onclick="previousStory()">⬅️ القصة السابقة</button>
+                    <span id="story-counter">1 من 2</span>
+                    <button onclick="nextStory()">القصة التالية ➡️</button>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
